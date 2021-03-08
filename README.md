@@ -52,6 +52,7 @@ auth3DRequest.Expiry = 2408;//YYMM
 auth3DRequest.InstallmentCount = 1;
 auth3DRequest.Lang = "TR";
 auth3DRequest.OrderId = DateTime.Now.Ticks.ToString();
+//auth3DRequest.Version="v1.1"//"v1.0" by default. In the "v1.1" version, the payment is not made directly after 3d verification. To complete the payment, you need to call the Complete3D method.
 
 var payment = new Payment(paymentOptions);
 var response = await payment.Auth3D(auth3DRequest);
